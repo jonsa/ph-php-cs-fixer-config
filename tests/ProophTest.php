@@ -8,7 +8,6 @@
  * file that was distributed with this source code.
  */
 
-declare(strict_types=1);
 
 namespace Prooph\CS\Config\Test;
 
@@ -21,7 +20,7 @@ class ProophTest extends TestCase
     /**
      * @test
      */
-    public function it_implements_interface(): void
+    public function it_implements_interface()
     {
         $config = new Prooph();
         $this->assertInstanceOf(ConfigInterface::class, $config);
@@ -30,7 +29,7 @@ class ProophTest extends TestCase
     /**
      * @test
      */
-    public function it_returns_correct_values(): void
+    public function it_returns_correct_values()
     {
         $config = new Prooph();
         $this->assertSame('prooph', $config->getName());
@@ -41,7 +40,7 @@ class ProophTest extends TestCase
     /**
      * @test
      */
-    public function it_has_rules(): void
+    public function it_has_rules()
     {
         $config = new Prooph();
         $this->assertNotEmpty($config->getRules());
@@ -50,7 +49,7 @@ class ProophTest extends TestCase
     /**
      * @test
      */
-    public function it_does_not_have_header_comment_fixer_by_default(): void
+    public function it_does_not_have_header_comment_fixer_by_default()
     {
         $config = new Prooph();
         $rules = $config->getRules();

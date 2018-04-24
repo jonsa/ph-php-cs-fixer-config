@@ -8,8 +8,6 @@
  * file that was distributed with this source code.
  */
 
-declare(strict_types=1);
-
 namespace Prooph\CS\Config;
 
 use PhpCsFixer\Config;
@@ -23,7 +21,7 @@ class Prooph extends Config
         $this->setRiskyAllowed(true);
     }
 
-    public function getRules(): array
+    public function getRules()
     {
         return [
             '@PSR2' => true,
@@ -40,7 +38,7 @@ class Prooph extends Config
             'class_definition' => true,
             'combine_consecutive_unsets' => true,
             'concat_space' => false,
-            'declare_strict_types' => true,
+            'declare_strict_types' => false,
             'elseif' => true,
             'encoding' => true,
             'full_opening_tag' => true,
@@ -107,8 +105,10 @@ class Prooph extends Config
             'trailing_comma_in_multiline_array' => true,
             'trim_array_spaces' => true,
             'unary_operator_spaces' => true,
-            'visibility_required' => true,
+            'visibility_required' => ['property', 'method'],
             'whitespace_after_comma_in_array' => true,
+            'ternary_to_null_coalescing' => false,
+            'void_return' => false,
         ];
     }
 }
